@@ -6,7 +6,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1221,1258</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>786,1258</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>LoginOK_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -80,9 +80,15 @@
       </sap:WorkflowViewStateService.ViewState>
       <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke GetAppCredentials workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="Framework\GetAppCredentials.xaml">
         <ui:InvokeWorkflowFile.Arguments>
-          <OutArgument x:TypeArguments="x:String" x:Key="out_Username">[username]</OutArgument>
-          <InArgument x:TypeArguments="x:String" x:Key="in_Credential">UiBank Admin Credentials</InArgument>
-          <OutArgument x:TypeArguments="ss:SecureString" x:Key="out_Password">[password]</OutArgument>
+          <OutArgument x:TypeArguments="x:String" x:Key="out_Username">
+            <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="username" />
+          </OutArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="in_Credential">
+            <Literal x:TypeArguments="x:String">UiBank Admin Credentials</Literal>
+          </InArgument>
+          <OutArgument x:TypeArguments="ss:SecureString" x:Key="out_Password">
+            <mva:VisualBasicReference x:TypeArguments="ss:SecureString" ExpressionText="password" />
+          </OutArgument>
         </ui:InvokeWorkflowFile.Arguments>
       </ui:InvokeWorkflowFile>
     </Sequence>
